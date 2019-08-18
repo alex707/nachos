@@ -4,4 +4,11 @@
   <%= submit_tag 'Search' %>
 <% end %>
 
-<%= content_tag(:div, @contributers&.join(', '), class: 'results') %>
+<div class="results">
+  <% @contributers&.each do |elem| %>
+    <p>
+      <%= elem %> <br>
+      <%= link_to "#{elem}.pdf", exports_download_path(contributer: elem) %>
+    </p>
+  <% end %>
+</div>
