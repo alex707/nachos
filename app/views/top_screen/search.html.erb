@@ -5,10 +5,20 @@
 <% end %>
 
 <div class="results">
-  <% @contributers&.each do |elem| %>
+  <% if @contributers&.any? %>
+    <% @contributers.each do |elem| %>
+      <p>
+        <%= elem %> <br>
+        <%= link_to "#{elem}.pdf",
+                    exports_download_path(contributer: elem),
+                    method: :post %>
+      </p>
+    <% end %>
+
     <p>
-      <%= elem %> <br>
-      <%= link_to "#{elem}.pdf", exports_download_path(contributer: elem) %>
+      <%= link_to "diplomas.zip",
+                  exports_download_path(contributers: @contributers),
+                  method: :post %>
     </p>
   <% end %>
 </div>

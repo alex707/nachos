@@ -227,6 +227,7 @@ DEPENDENCIES
   rails (~> 5.2.3)
   rails-controller-testing
   rspec-rails
+  rubyzip
   sass-rails (~> 5.0)
   selenium-webdriver
   spring
