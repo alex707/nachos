@@ -1,7 +1,14 @@
 class TopScreenController < ApplicationController
   def search
     if params[:link]
-      @contributers = RepoCheckerService.new(params[:link]).call
+      repo_checker = RepoCheckerService.new(params[:link]).call
+      @contributers = []
+
+      if repo_checker.response_code == '200'
+        @contributers = repo_checker.contributers
+      else
+        flash[:alert] = 'Check the correctness of the entered link'
+      end
     end
   end
 

@@ -4,4 +4,4 @@
   <%= submit_tag 'Search' %>
 <% end %>
 
-<%= content_tag(:div, @contributers, class: 'results') %>
+<%= content_tag(:div, @contributers&.join(', '), class: 'results') %>
