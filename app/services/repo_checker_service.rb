@@ -1,3 +1,5 @@
+require 'net/http'
+
 class RepoCheckerService
   MAX_OF_TOP = 3
 
