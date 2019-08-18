@@ -18,6 +18,8 @@ feature 'User can see top-3 contributers of repo', %q{
         expect(page).to have_link('josh.pdf')
         expect(page).to have_link('schneems.pdf')
         expect(page).to have_link('sstephenson.pdf')
+
+        expect(page).to have_link('diplomas.zip')
       end
     end
 
