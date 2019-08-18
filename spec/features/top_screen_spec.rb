@@ -14,6 +14,10 @@ feature 'User can see top-3 contributers of repo', %q{
         expect(page).to have_content('josh')
         expect(page).to have_content('schneems')
         expect(page).to have_content('sstephenson')
+
+        expect(page).to have_link('josh.pdf')
+        expect(page).to have_link('schneems.pdf')
+        expect(page).to have_link('sstephenson.pdf')
       end
     end
 
