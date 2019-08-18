@@ -1,0 +1,7 @@
+<%= form_tag(top_screen_search_path) do %>
+  <%= label_tag :link, 'Search repo' %>
+  <%= text_field_tag :link %>
+  <%= submit_tag 'Search' %>
+<% end %>
+
+<%= content_tag(:div, @contributers, class: 'results') %>
